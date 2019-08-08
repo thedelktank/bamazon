@@ -38,13 +38,13 @@ function purchasePrompt(){
 	{
 		name: "ID",
 		type: "input",
-		message:"Please enter Item ID you like to purhcase.",
+		message:"Enter the ID/Mnemonic of the item you would like to purchase.",
 		filter: String
 	},
 	{
 		name:"Quantity",
 		type:"input",
-		message:"How many items do you wish to purchase?",
+		message:"How many do you want to buy?",
 		filter: String
 	},
 
@@ -60,8 +60,8 @@ function purchaseOrder(ID, amtNeeded){
 		if(err){console.log(err)};
 		if(amtNeeded <= res[0].stock_quantity){
 			var totalCost = res[0].price * amtNeeded;
-			console.log("Good news your order is in stock!");
-			console.log("Your total cost for " + amtNeeded + " " +res[0].product_name + " is " + totalCost + " Thank you!");
+			console.log("Order in stock.");
+			console.log("Your total cost for " + amtNeeded + " " +res[0].product_name + " is " + totalCost + " Please come again!");
 			let updatedQuantity = res[0].stock_quantity - amtNeeded
 			connection.query("UPDATE products SET ? WHERE ?",[{
 				stock_quantity: updatedQuantity
@@ -70,7 +70,7 @@ function purchaseOrder(ID, amtNeeded){
 				item_id: ID
 		}]);
 		} else{
-			console.log("Insufficient quantity, sorry we do not have enough " + res[0].product_name + "to complete your order.");
+			console.log("All items have been bought. Stock depleted. " + res[0].product_name + "to complete your order.");
 		};
 		displayProducts();
 	});
