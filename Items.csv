@@ -1,0 +1,11 @@
+item_id,product_name,department_name,price,stock_quantity
+BAN,Bananas,Produce,4,45
+APP,Apples,Produce,3,96
+ORG,Oranges,Produce,1,96
+ROM,Lettuce,Produce,6,12
+CRX,laCroix,Grocery,5,12
+BCN,Bacon,Meat,12,17
+BAG,GarbageBag,Grocery,8,54
+MLK,Milk,Dairy,4,25
+FRL,Roses,Floral,13,20
+POO,Diapers,Grocery,11,19
