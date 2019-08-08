@@ -59,9 +59,9 @@ function purchaseOrder(ID, amtNeeded){
 	connection.query('Select * FROM products WHERE ?',{item_id: ID}, function(err,res){
 		if(err){console.log(err)};
 		if(amtNeeded <= res[0].stock_quantity){
-			var totalCost = res[0].price * amtNeeded;
+			var productCost = res[0].price * amtNeeded;
 			console.log("Order in stock.");
-			console.log("Your total cost for " + amtNeeded + " " +res[0].product_name + " is " + totalCost + " Please come again!");
+			console.log("Your total cost for " + amtNeeded + " " +res[0].product_name + " is " + productCost + " Please come again!");
 			let updatedQuantity = res[0].stock_quantity - amtNeeded
 			connection.query("UPDATE products SET ? WHERE ?",[{
 				stock_quantity: updatedQuantity
