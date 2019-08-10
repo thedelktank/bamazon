@@ -8,7 +8,7 @@ Ordering something is as easy as choosing the Item ID that you want.
 ![Buying an Item](Images/buy.png)
 **Completing the order**
 Once you have chosen the item you want enter the quantity you need and press enter. The database will dynamically update the quantities based on how many you ordered.
-![Completing the order](Images\ordercomplete.png)
+![Completing the order](Images/ordercomplete.png)
 **Out of StocK**
 If you try and order too many of something you will get an error let you know that there isnt enough stock to complete the order.
-![Out of Stock](Images\outofstock.png)
+![Out of Stock](Images/outofstock.png)
